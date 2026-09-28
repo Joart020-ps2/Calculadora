@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Média do Aluno</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card" aria-labelledby="titulo">
+      <div class="cabecalho">
+        <p class="etiqueta">Avaliação escolar</p>
+        <h1 id="titulo">Calculadora de média</h1>
+        <p class="subtitulo">Informe as quatro notas do aluno para descobrir a média e o status final.</p>
+      </div>
+
+      <form id="formulario-notas" novalidate>
+        <div class="campo-grid">
+          <div class="campo">
+            <label for="nota1">Nota 1</label>
+            <input type="number" id="nota1" name="nota1" min="0" max="10" step="0.1" placeholder="0,0" required>
+          </div>
+
+          <div class="campo">
+            <label for="nota2">Nota 2</label>
+            <input type="number" id="nota2" name="nota2" min="0" max="10" step="0.1" placeholder="0,0" required>
+          </div>
+
+          <div class="campo">
+            <label for="nota3">Nota 3</label>
+            <input type="number" id="nota3" name="nota3" min="0" max="10" step="0.1" placeholder="0,0" required>
+          </div>
+
+          <div class="campo">
+            <label for="nota4">Nota 4</label>
+            <input type="number" id="nota4" name="nota4" min="0" max="10" step="0.1" placeholder="0,0" required>
+          </div>
+        </div>
+
+        <div id="mensagem-erro" class="mensagem-erro" role="alert" aria-live="polite"></div>
+
+        <div class="botoes">
+          <button type="submit" class="botao botao-principal">Calcular média</button>
+          <button type="reset" id="botao-limpar" class="botao botao-secundario">Limpar</button>
+        </div>
+      </form>
+
+      <div class="resultado-grid" aria-live="polite">
+        <div class="visor">
+          <span class="visor-titulo">Média do aluno</span>
+          <strong id="visor-media" class="visor-valor">--</strong>
+        </div>
+
+        <div id="visor-status" class="visor visor-status">
+          <span class="visor-titulo">Status do aluno</span>
+          <strong id="status-aluno" class="visor-valor">Aguardando notas</strong>
+          <span id="detalhe-status" class="detalhe-status">Preencha os campos acima.</span>
+        </div>
+      </div>
+
+      <div class="legenda">
+        <span><b>6,0 ou mais:</b> aprovado</span>
+        <span><b>4,0 a 5,9:</b> recuperação</span>
+        <span><b>Abaixo de 4,0:</b> reprovado</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
